@@ -1,0 +1,8 @@
+#NotFound {
+    background: url('/assets/a110r-lemans.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#NotFound > div.hero-body {
+    background: rgba(0, 0, 0, .4);
+}
