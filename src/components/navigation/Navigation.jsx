@@ -2,7 +2,7 @@ import './Navigation.css'
 
 export default function Navigation() {
     return (
-        <nav className="navbar is-transparent">
+        <nav id="Navigation" className="navbar is-transparent">
             <div className="navbar-menu">
                 <div className="navbar-start">
                     <a className="navbar-item" href="/configure/a110">A110</a>
@@ -14,7 +14,7 @@ export default function Navigation() {
                     <div className="navbar-item">
                         <div className="field is-grouped">
                             <p className="control">
-                                <a className="button" href="/configure">Configurer</a>
+                                <a className="button is-radiusless" href="/configure">Configurer</a>
                             </p>
                         </div>
                     </div>
