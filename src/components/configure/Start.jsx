@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom"
 import Card from "../card/Card"
 
 const gamme = [
-  { name: 'A110 R', price: 59000 },
-  { name: 'A110 S', price: 52000 }
+  { name: 'Pure', price: 54700, img: '/assets/configurateur/modele/selection/pure.png' },
+  { name: 'Legende', price: 58500, img: '/assets/configurateur/modele/selection/legende.png' }
 ]
 
 export function Start() {
@@ -12,7 +13,7 @@ export function Start() {
         <nav className="navbar">
           <div id="navbarConfigure" className="navbar-menu">
             <div className="navbar-end">
-              <a href="/" className="navbar-item">Fermer</a>
+              <Link to="/" className="navbar-item">Fermer</Link>
             </div>
           </div>
         </nav>
@@ -20,7 +21,7 @@ export function Start() {
       <div className="hero-body">
         <div className="container">
           <div className="columns is-justify-content-space-evenly">
-            {gamme.map((model, index) => <Card key={index} name={model.name} price={model.price} />)}
+            {gamme.map((model, index) => <Card key={index} model={model} />)}
           </div>
         </div>
       </div>

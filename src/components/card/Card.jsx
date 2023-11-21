@@ -1,13 +1,15 @@
 import React from 'react'
 
-export default function Card({ name, price }) {
+export default function Card({ model }) {
+    const styles = ''
+
     return (
         <div className="column is-one-quarter">
             <div className="card">
                 <div className="card-image">
                     <figure className="image is-4by3">
                         <img
-                            src="https://bulma.io/images/placeholders/1280x960.png"
+                            src={model.img}
                             alt="Placeholder image"
                         />
                     </figure>
@@ -15,9 +17,9 @@ export default function Card({ name, price }) {
                 <div className="card-content">
                     <div className="medi">
                         <div className="medi-content">
-                            <p className="title is-4">{name}</p>
+                            <p className="title is-4">{model.name}</p>
                             <p className="subtitle is-6">
-                                à partir de {price} €
+                                à partir de {model.price} €
                             </p>
                         </div>
                     </div>

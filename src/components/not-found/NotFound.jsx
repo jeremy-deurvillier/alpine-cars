@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './NotFound.css'
 
 export default function NotFound() {
@@ -8,7 +9,7 @@ export default function NotFound() {
                     <h1 hidden>Alpine</h1>
                     <h2 className="subtitle is-1 is-uppercase has-text-weight-bold">Page non trouvée !</h2>
                     <p>
-                        <a href="/" className="is-uppercase button">Retour à l'accueil</a>
+                        <Link to="/" className="is-uppercase button">Retour à l'accueil</Link>
                     </p>
                 </div>
             </div>
