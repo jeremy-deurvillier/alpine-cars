@@ -1,16 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Card({ model }) {
-    const styles = ''
+    const urlImage = '/assets/configurateur/modele/selection/' + model.image
+    const link = '/configure/' + model.name.toLowerCase()
 
     return (
         <div className="column is-one-quarter">
-            <div className="card">
+            <div className="card is-radiusless">
                 <div className="card-image">
                     <figure className="image is-4by3">
                         <img
-                            src={model.img}
-                            alt="Placeholder image"
+                            src={urlImage}
+                            alt={model.name}
                         />
                     </figure>
                 </div>
@@ -28,7 +30,7 @@ export default function Card({ model }) {
                         iaculis mauris. <a>@bulmaio</a>.
                         <br />
                         <p className="is-flex is-justify-content-center pt-4">
-                            <a href="#" className="button">Configurer</a>
+                            <Link to={link} className="button is-radiusless">Configurer</Link>
                         </p>
                     </div>
                 </div>

@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom"
 import Card from "../card/Card"
-
-const gamme = [
-  { name: 'Pure', price: 54700, img: '/assets/configurateur/modele/selection/pure.png' },
-  { name: 'Legende', price: 58500, img: '/assets/configurateur/modele/selection/legende.png' }
-]
+import { useSelector } from "react-redux"
 
 export function Start() {
+  const gammes = useSelector(state => state.cars.versions)
+
   return (
     <div className="hero is-fullheight">
       <div className="hero-head">
@@ -21,7 +19,7 @@ export function Start() {
       <div className="hero-body">
         <div className="container">
           <div className="columns is-justify-content-space-evenly">
-            {gamme.map((model, index) => <Card key={index} model={model} />)}
+            {gammes.map((model, index) => <Card key={index} model={model} />)}
           </div>
         </div>
       </div>
