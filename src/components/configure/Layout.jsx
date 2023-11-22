@@ -1,15 +1,22 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Outlet, useParams } from 'react-router-dom'
-import { setCar } from '../../reducers/cars'
+import { setCar, setRim } from '../../reducers/cars'
 import Error from './Error'
 
 const Layout = () => {
     const { name } = useParams()
     const car = useSelector(state => state.cars.current.model)
+    const gammes = useSelector(state => state.cars.versions)
+    const rims = useSelector(state => state.cars.options.rims)
     const error = useSelector(state => state.cars.error)
     const dispatch = useDispatch()
+    const myChoice = name === 'pure' ? gammes[0] : gammes[1]
+    const rim = (myChoice.name && myChoice.name.toLowerCase() === 'pure') ? rims[0] : rims[2]
 
-    dispatch(setCar({ name: name }))
+    if (!car.name) {
+        dispatch(setCar({ car: myChoice }))
+        dispatch(setRim({ rim }))
+    }
 
     return (
         <>
@@ -17,11 +24,11 @@ const Layout = () => {
                 <div id="navbarConfigure" className="navbar-menu">
                     <div className="navbar-start">
                         <div className="navbar-item has-dropdown is-hoverable">
-                            <a href="#" className="navbar-link">Options ({car})</a>
+                            <a href="#" className="navbar-link">Options</a>
                             <div className="navbar-dropdown">
                                 <Link to={'/configure/' + name + '/color'} className="navbar-item">Couleur</Link>
-                                <Link to="/configure/" className="navbar-item">Jantes & roues</Link>
-                                <Link className="navbar-item">Sellerie</Link>
+                                <Link to={'/configure/' + name + '/rim'} className="navbar-item">Jantes & roues</Link>
+                                <Link to={'/configure/' + name + '/sealing'} className="navbar-item">Sellerie</Link>
                                 <Link className="navbar-item">Equipements</Link>
                                 <Link className="navbar-item">Accessoires</Link>
                                 <Link className="navbar-item">Récapitulatif</Link>
@@ -39,12 +46,7 @@ const Layout = () => {
             </nav>
 
             <main>
-                {
-                    error.message === '' 
-                    ? <Outlet /> 
-                    : <Error message={error.message} />
-                }
-                
+                <Outlet />
             </main>
         </>
     )

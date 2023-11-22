@@ -18,12 +18,10 @@ const carsSlice = createSlice({
     reducers: {
         init: () => console.log('Hello !'),
         setCar: (state, action) => {
-            const carsName = state.versions.map((model, index) => model.name.toLowerCase())
-            const rim = action.payload.name == 'pure' ? rims[0] : rims[2]
+            const carsName = state.versions.map(model => model.name)
 
-            if (carsName.includes(action.payload.name)) {
-                state.current.model = action.payload.name
-                state.current.rim = rim
+            if (carsName.includes(action.payload.car.name)) {
+                state.current.model = action.payload.car
                 state.error.message = ''
             } else {
                 state.error.message = 'Ce modèle n\'existe pas !'
@@ -31,10 +29,13 @@ const carsSlice = createSlice({
         },
         setColor: (state, action) => {
             state.current = {...state.current, color: action.payload.color}
+        },
+        setRim: (state, action) => {
+            state.current = {...state.current, rim: action.payload.rim}
         }
     }
 })
 
-export const { init, setCar, setColor } = carsSlice.actions
+export const { init, setCar, setColor, setRim } = carsSlice.actions
 
 export default carsSlice.reducer

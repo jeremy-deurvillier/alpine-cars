@@ -12,9 +12,9 @@ export default function Navigation() {
 
     return (
         <nav id="Navigation" className="navbar is-transparent">
-            <div className="navbar-menu">
+            <div id="navigation-content" className="navbar-menu">
                 <div className="navbar-start">
-                    { links }
+                    {links}
                 </div>
                 <div className="navbar-end">
                     <div className="navbar-item">

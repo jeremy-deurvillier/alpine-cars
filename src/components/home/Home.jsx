@@ -1,7 +1,17 @@
+import { useDispatch, useSelector } from "react-redux"
 import Navigation from "../navigation/Navigation"
+import { setCar, setRim } from "../../reducers/cars"
 import './Home.css'
 
 export default function Home() {
+    // const car = useSelector(state => state.cars.current.model)
+    const dispatch = useDispatch()
+
+    // if (car !== '') {
+    //     dispatch(setCar({ name: '' }))
+    //     dispatch(setRim({ rim: {} }))
+    // }
+
     return (
         <section id="Home" className="hero is-black is-fullheight">
             <div className="hero-body">
