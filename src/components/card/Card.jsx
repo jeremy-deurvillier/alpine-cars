@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Card({ model }) {
     const urlImage = '/assets/configurateur/modele/selection/' + model.image
-    const link = '/configure/' + model.name.toLowerCase()
+    const link = '/configure/' + model.name.toLowerCase() + '/color'
 
     return (
         <div className="column is-one-quarter">

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 export default function Navigation() {
     const gammes = useSelector(state => state.cars.versions)
     const links = gammes.map(model => {
-        const link = '/configure/' + model.name.toLowerCase()
+        const link = '/configure/' + model.name.toLowerCase() + '/color'
 
         return <Link key={model.name} className="navbar-item" to={link}>{model.name}</Link>
     })

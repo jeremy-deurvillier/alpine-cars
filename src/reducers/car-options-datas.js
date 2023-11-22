@@ -4,15 +4,15 @@ export const versions = [
 ]
 
 export const colors = [
-    {name: 'Teinte spéciale Bleu Alpine', price: 1800, for: 'all'},
-    {name: 'Teinte métallisée Noir Profond', price: 840, for: 'all'},
-    {name: 'Peinture opaque Blanc Glacier', price: 0, for: 'all'},
+    {name: 'Teinte spéciale Bleu Alpine', price: 1800, image: 'bleu.jpg', for: 'all'},
+    {name: 'Teinte métallisée Noir Profond', price: 840, image: 'noir.jpg', for: 'all'},
+    {name: 'Peinture opaque Blanc Glacier', price: 0, image: 'blanc.jpg', for: 'all'},
 ]
 
 export const rims = [
-    {name: 'Standard', price: 0, for: 'all'},
-    {name: 'Serac', price: 1000, for: 'all'},
-    {name: 'Legende', price: 0, for: 'legende'},
+    {name: 'standard', price: 0, for: 'pure'},
+    {name: 'serac', price: 1000, for: 'pure'},
+    {name: 'legende', price: 0, for: 'legende'},
 ]
 
 export const sealing = [
@@ -106,3 +106,47 @@ const accessoriesCustoms = {
 }
 
 export const accessories = { transport, multimedia, materials, customs: accessoriesCustoms }
+
+const legende = [
+    'modele_legende-couleur_blanc-jante_legende-1.jpg',
+    'modele_legende-couleur_blanc-jante_legende-2.jpg',
+    'modele_legende-couleur_blanc-jante_legende-3.jpg',
+    'modele_legende-couleur_blanc-jante_legende-4.jpg',
+    'modele_legende-couleur_bleu-jante_legende-1.jpg',
+    'modele_legende-couleur_bleu-jante_legende-2.jpg',
+    'modele_legende-couleur_bleu-jante_legende-3.jpg',
+    'modele_legende-couleur_bleu-jante_legende-4.jpg',
+    'modele_legende-couleur_noir-jante_legende-1.jpg',
+    'modele_legende-couleur_noir-jante_legende-2.jpg',
+    'modele_legende-couleur_noir-jante_legende-3.jpg',
+    'modele_legende-couleur_noir-jante_legende-4.jpg',
+]
+
+const pure = [
+    'modele_pure-couleur_blanche-jante_serac-1.jpg',
+    'modele_pure-couleur_blanche-jante_serac-2.jpg',
+    'modele_pure-couleur_blanche-jante_serac-3.jpg',
+    'modele_pure-couleur_blanche-jante_serac-4.jpg',
+    'modele_pure-couleur_blanche-jante_standard-1.jpg',
+    'modele_pure-couleur_blanche-jante_standard-2.jpg',
+    'modele_pure-couleur_blanche-jante_standard-3.jpg',
+    'modele_pure-couleur_blanche-jante_standard-4.jpg',
+    'modele_pure-couleur_bleu-jante_serac-1.jpg',
+    'modele_pure-couleur_bleu-jante_serac-2.jpg',
+    'modele_pure-couleur_bleu-jante_serac-3.jpg',
+    'modele_pure-couleur_bleu-jante_serac-4.jpg',
+    'modele_pure-couleur_bleu-jante_standard-1.jpg',
+    'modele_pure-couleur_bleu-jante_standard-2.jpg',
+    'modele_pure-couleur_bleu-jante_standard-3.jpg',
+    'modele_pure-couleur_bleu-jante_standard-4.jpg',
+    'modele_pure-couleur_noire-jante_serac-1.jpg',
+    'modele_pure-couleur_noire-jante_serac-2.jpg',
+    'modele_pure-couleur_noire-jante_serac-3.jpg',
+    'modele_pure-couleur_noire-jante_serac-4.jpg',
+    'modele_pure-couleur_noire-jante_standard-1.jpg',
+    'modele_pure-couleur_noire-jante_standard-2.jpg',
+    'modele_pure-couleur_noire-jante_standard-3.jpg',
+    'modele_pure-couleur_noire-jante_standard-4.jpg',
+]
+
+export const models = { pure, legende }
