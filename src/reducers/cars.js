@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { versions, colors, rims, sealing, equipments, accessories, models } from './car-options-datas'
 
-const current = {model: {}, color: colors[2], rim: {}}
+const current = {model: {}, color: colors[2], rim: {}, sealing: {}}
 const error = {message: ''}
 
 const initialState = {
@@ -32,10 +32,13 @@ const carsSlice = createSlice({
         },
         setRim: (state, action) => {
             state.current = {...state.current, rim: action.payload.rim}
+        },
+        setSealing: (state, action) => {
+            state.current = {...state.current, sealing: action.payload.sealing}
         }
     }
 })
 
-export const { init, setCar, setColor, setRim } = carsSlice.actions
+export const { init, setCar, setColor, setRim, setSealing } = carsSlice.actions
 
 export default carsSlice.reducer

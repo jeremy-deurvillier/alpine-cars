@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Outlet, useParams } from 'react-router-dom'
-import { setCar, setRim } from '../../reducers/cars'
+import { setCar, setRim, setSealing } from '../../reducers/cars'
 import Error from './Error'
 
 const Layout = () => {
@@ -8,14 +8,17 @@ const Layout = () => {
     const car = useSelector(state => state.cars.current.model)
     const gammes = useSelector(state => state.cars.versions)
     const rims = useSelector(state => state.cars.options.rims)
+    const sealings = useSelector(state => state.cars.options.sealing)
     const error = useSelector(state => state.cars.error)
     const dispatch = useDispatch()
     const myChoice = name === 'pure' ? gammes[0] : gammes[1]
     const rim = (myChoice.name && myChoice.name.toLowerCase() === 'pure') ? rims[0] : rims[2]
+    const sealing = (myChoice.name && myChoice.name.toLowerCase() === 'pure') ? sealings[0] : sealings[2]
 
     if (!car.name) {
         dispatch(setCar({ car: myChoice }))
         dispatch(setRim({ rim }))
+        dispatch(setSealing({ sealing }))
     }
 
     return (
