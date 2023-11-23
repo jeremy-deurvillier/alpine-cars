@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom"
 
 export default function Thumbnail({ object, action }) {
     const { option } = useParams()
+    const styles = {
+        cursor:'pointer',
+    }
 
     let imageSrc, filename
 
@@ -25,7 +28,7 @@ export default function Thumbnail({ object, action }) {
     }
 
     return (
-        <div className="column is-one-fifth" onClick={e => action(object)}>
+        <div className="column is-one-fifth" onClick={e => action(object)} style={styles}>
             <div className="card is-transparent">
                 <div className="card-image">
                     <figure className="image is-16by9">

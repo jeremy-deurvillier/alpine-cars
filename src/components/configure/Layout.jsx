@@ -5,7 +5,7 @@ import Error from './Error'
 
 const Layout = () => {
     const { name } = useParams()
-    const car = useSelector(state => state.cars.current.model)
+    const car = useSelector(state => state.cars.current)
     const gammes = useSelector(state => state.cars.versions)
     const rims = useSelector(state => state.cars.options.rims)
     const sealings = useSelector(state => state.cars.options.sealing)
@@ -14,8 +14,9 @@ const Layout = () => {
     const myChoice = name === 'pure' ? gammes[0] : gammes[1]
     const rim = (myChoice.name && myChoice.name.toLowerCase() === 'pure') ? rims[0] : rims[2]
     const sealing = (myChoice.name && myChoice.name.toLowerCase() === 'pure') ? sealings[0] : sealings[2]
+    const price = Object.keys(car).map(k => car[k].price).reduce((acc, cur) => acc + cur, 0)
 
-    if (!car.name) {
+    if (!car.model.name) {
         dispatch(setCar({ car: myChoice }))
         dispatch(setRim({ rim }))
         dispatch(setSealing({ sealing }))
@@ -37,6 +38,9 @@ const Layout = () => {
                                 <Link className="navbar-item">Récapitulatif</Link>
                             </div>
                         </div>
+                    </div>
+                    <div className="is-flex is-align-items-center">
+                        Prix : { price } €
                     </div>
                     <div className="navbar-end">
                         <div className="navbar-item">

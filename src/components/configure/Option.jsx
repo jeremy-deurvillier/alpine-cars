@@ -66,7 +66,12 @@ export default function Option() {
             action = changeSealing
             break;
         default:
-            optionPage = []
+            imageModel = 'modele_' + mycar.model.name.toLowerCase() + '-couleur_' + mycar.color.image.split('.')[0] + '-jante_' + mycar.rim.name + '-' + index + '.jpg'
+            path = '/assets/configurateur/modele/' + mycar.model.name.toLowerCase() + '/' + imageModel
+
+            optionPage = options.colors
+            maxImage = IMAGE_PER_MODEL
+            action = changeColor
             break;
     }
 
