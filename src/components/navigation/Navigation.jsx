@@ -7,23 +7,17 @@ export default function Navigation() {
     const links = gammes.map(model => {
         const link = '/configure/' + model.name.toLowerCase() + '/color'
 
-        return <Link key={model.name} className="navbar-item" to={link}>{model.name}</Link>
+        return <Link key={model.name} className="model-item" to={link}>{model.name}</Link>
     })
 
     return (
-        <nav id="Navigation" className="navbar is-transparent">
-            <div id="navigation-content" className="navbar-menu">
-                <div className="navbar-start">
-                    {links}
+        <nav id="navigation">
+            <div className="navigation-content">
+                <div className="configure-button">
+                    <Link className="button" to="/configure">Configurer</Link>
                 </div>
-                <div className="navbar-end">
-                    <div className="navbar-item">
-                        <div className="field is-grouped">
-                            <p className="control">
-                                <Link className="button is-radiusless" to="/configure">Configurer</Link>
-                            </p>
-                        </div>
-                    </div>
+                <div className="models-list">
+                    {links}
                 </div>
             </div>
         </nav>

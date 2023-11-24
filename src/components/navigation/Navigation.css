@@ -1,3 +1,56 @@
-#Navigation {
+/* #Navigation {
     background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, 1));
+} */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+#navigation {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    flex: 1 1 auto;
+    align-self: flex-end;
+    height: 50%;
+}
+
+#navigation > .navigation-content {
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+
+#navigation > .navigation-content > .configure-button {
+    padding: 10px;
+}
+
+.button {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background: hsl(225, 98%, 51%);
+    padding: 12px 22px;
+}
+
+.button:hover {
+    background: hsl(225, 98%, 46%);
+}
+
+#navigation > .navigation-content > .models-list {
+    display: none;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+#navigation > .navigation-content > .models-list > .model-item {
+    text-decoration: none;
+    color: white;
+}
+
+#navigation > .navigation-content > .models-list > .model-item:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+    #navigation > .navigation-content > .models-list {
+        display: flex;
+    }
 }

@@ -1,8 +1,61 @@
-#Home {
-    background: url('/assets/home-background.webp') no-repeat center center fixed;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+#home {
+    font-family: 'Roboto', sans-serif;
+    background: url('/assets/home-background.webp') no-repeat -150px center fixed;
     background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
 }
 
-#Home > div.hero-body {
-    background: rgba(0, 0, 0, .2);
+#home > div {
+    flex: 0 1 auto;
+}
+
+#home > div.content {
+    background: rgba(0, 0, 0, .35);
+    height: 50vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
+
+#home > div.content > div {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 2.1em;
+    text-align: center;
+    color: white;
+}
+
+@media screen and (min-width: 600px) {
+    #home {
+        background: url('/assets/home-background.webp') no-repeat center center fixed;
+        flex-flow: row wrap;
+    }
+
+    #home > div.content {
+        width: 50vw;
+        height: inherit;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .title {
+        font-size: 2.4em;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .title {
+        font-size: 2.8em;
+    }
 }

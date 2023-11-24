@@ -4,7 +4,7 @@ import { Start as StartConfigure } from '../configure/Start'
 import NotFound from '../not-found/NotFound'
 import Layout from '../configure/Layout'
 import Option from '../configure/Option'
-import './App.css'
+import './reset.css'
 
 function App() {
   return (<>
