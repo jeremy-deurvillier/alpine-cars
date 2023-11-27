@@ -24,33 +24,41 @@ const Layout = () => {
 
     return (
         <>
-            <nav className="navbar is-black" role="navigation" aria-label="main navigation">
-                <div id="navbarConfigure" className="navbar-menu">
-                    <div className="navbar-start">
-                        <div className="navbar-item has-dropdown is-hoverable">
-                            <a href="#" className="navbar-link">Options</a>
-                            <div className="navbar-dropdown">
-                                <Link to={'/configure/' + name + '/color'} className="navbar-item">Couleur</Link>
-                                <Link to={'/configure/' + name + '/rim'} className="navbar-item">Jantes & roues</Link>
-                                <Link to={'/configure/' + name + '/sealing'} className="navbar-item">Sellerie</Link>
-                                <Link className="navbar-item">Equipements</Link>
-                                <Link className="navbar-item">Accessoires</Link>
-                                <Link className="navbar-item">Récapitulatif</Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="is-flex is-align-items-center">
-                        Prix : { price } €
-                    </div>
-                    <div className="navbar-end">
-                        <div className="navbar-item">
-                            <Link to="/" className="button is-transparent">
-                                Fermer
-                            </Link>
-                        </div>
-                    </div>
+            <nav className="navigation-configurator" role="navigation" aria-label="main navigation">
+                <div className="sidebar-menu">
+                    <ul>
+                        <li>
+                            <Link to={'/configure/' + name + '/color'} className="navbar-item">Couleur</Link>
+                        </li>
+                        <li>
+                            <Link to={'/configure/' + name + '/rim'} className="navbar-item">Jantes & roues</Link>
+                        </li>
+                        <li>
+                            <Link to={'/configure/' + name + '/sealing'} className="navbar-item">Sellerie</Link>
+                        </li>
+                        <li>
+                            <Link className="navbar-item">Equipements</Link>
+                        </li>
+                        <li>
+                            <Link className="navbar-item">Accessoires</Link>
+                        </li>
+                        <li>
+                            <Link className="navbar-item">Récapitulatif</Link>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+                <div className="product-price">
+                    <p className="total-price">Prix : {price} €</p>
+                    <p></p>
+                </div>
+                <div className="navbar-configurator-close">
+                    <ul>
+                        <li>
+                            <Link to="/" className="close-configurator">Fermer</Link>
+                        </li>
+                    </ul>
+                </div>
+            </nav >
 
             <main>
                 <Outlet />

@@ -86,13 +86,11 @@ export default function Option() {
     }
 
     return (
-        <section>
-            <div style={{ height: '60vh' }} onClick={handleChangeView}>
-                <figure className="image">
-                    <img src={path} />
-                </figure>
+        <section id="Option">
+            <div className="image-wrapper" onClick={handleChangeView}>
+                <img src={path} alt={imageModel} />
             </div>
-            <div className="columns is-justify-content-center">
+            <div className="thumbs-list">
                 {
                     optionPage.map((o, i) => {
                         if (o.for.includes(mycar.model.name.toLowerCase()) || o.for.includes('all')) {

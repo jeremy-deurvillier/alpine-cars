@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
 
+/* Start component */
+
 #start {
     font-family: 'Roboto', sans-serif;
     height: 100vh;
     padding: 0 8px;
 }
 
-.navbar-configurator-start {
+.navbar-configurator-start,
+.navbar-configurator-close {
     display: flex;
     justify-content: flex-end;
     padding: 20px 10px;
@@ -46,4 +49,134 @@
         height: 70vh;
         flex-flow: row wrap;
     }
+}
+
+/* Option and Layout component */
+
+.navigation-configurator {
+    font-family: 'Roboto', sans-serif;
+    background: transparent;
+    height: 44px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-menu {
+    width: 200px;
+    position: fixed;
+    top: calc(50vh - (200px / 2));
+    transform: translateX(-150px);
+    transition: all .5s;
+}
+
+.sidebar-menu:hover {
+    transform: translateX(0);
+}
+
+.sidebar-menu>ul {
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.sidebar-menu>ul>li {
+    width: 180px;
+    height: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, .25);
+    padding: 15px 10px;
+}
+
+.sidebar-menu>ul>li>a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    width: inherit;
+    height: inherit;
+    display: inline-block;
+}
+
+.product-price {
+    color: white;
+    background-color: hsl(225, 98%, 51%);
+    height: inherit;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.total-price {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 50px;
+}
+
+.close-configurator {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+.close-configurator:hover {
+    text-decoration: underline;
+}
+
+#Option {
+    height: calc(100vh - 44px);
+    overflow: hidden;
+}
+
+.image-wrapper {
+    height: calc(100% - 150px);
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.thumbs-list {
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: sticky;
+    bottom:0;
+}
+
+/* Thumbnail component */
+
+.Thumb {
+    width: 220px;
+    height: 110px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.Thumb:hover .thumb-content {
+    opacity: 1;
+}
+
+.thumb-content {
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    position: absolute;
+    top:0; bottom:0;
+    left:0; right:0;
+    opacity: 0;
+    transition: all .5s;
 }
