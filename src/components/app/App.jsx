@@ -14,7 +14,6 @@ function App() {
         <Route path='/configure' element={<StartConfigure />} />
         <Route path='/configure/:name' element={<Layout />}>
           <Route path='/configure/:name/:option' element={<Option />} />
-          <Route path='/configure/:name/:option' element={<Option />} />
         </Route>
 
         <Route path='*' element={<NotFound />} />

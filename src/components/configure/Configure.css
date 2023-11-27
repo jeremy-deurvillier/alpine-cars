@@ -103,7 +103,6 @@
 
 .product-price {
     color: white;
-    background-color: hsl(225, 98%, 51%);
     height: inherit;
     display: flex;
     flex-flow: row nowrap;
@@ -114,7 +113,15 @@
 .total-price {
     font-weight: bold;
     text-transform: uppercase;
-    padding: 0 50px;
+    background-color: hsl(225, 98%, 51%);
+    padding: 15px 50px;
+}
+
+.product-price > p:last-child {
+    text-transform: capitalize;
+    background-color: hsl(225, 98%, 51%);
+    padding: 15px 50px;
+    margin-left: 50px;
 }
 
 .close-configurator {
@@ -179,4 +186,8 @@ img {
     left:0; right:0;
     opacity: 0;
     transition: all .5s;
+}
+
+.thumb-content > p:first-child {
+    text-transform: capitalize;
 }

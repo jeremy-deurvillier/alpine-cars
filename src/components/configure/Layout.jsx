@@ -5,6 +5,8 @@ import Error from './Error'
 
 const Layout = () => {
     const { name } = useParams()
+    const { option } = useParams()
+
     const car = useSelector(state => state.cars.current)
     const gammes = useSelector(state => state.cars.versions)
     const rims = useSelector(state => state.cars.options.rims)
@@ -15,6 +17,24 @@ const Layout = () => {
     const rim = (myChoice.name && myChoice.name.toLowerCase() === 'pure') ? rims[0] : rims[2]
     const sealing = (myChoice.name && myChoice.name.toLowerCase() === 'pure') ? sealings[0] : sealings[2]
     const price = Object.keys(car).map(k => car[k].price).reduce((acc, cur) => acc + cur, 0)
+
+    let productChoice
+
+    if (car.model.name) {
+        switch (option) {
+            case 'color':
+                productChoice = car.color.name + ' : +' + car.color.price + ' €'
+                break;
+            case 'rim':
+                productChoice = car.rim.name + ' : +' + car.rim.price + ' €'
+                break;
+            case 'sealing':
+                productChoice = car.sealing.name + ' : +' + car.sealing.price + ' €'
+                break;
+            default:
+                productChoice = car.color.name + ' : +' + car.color.price + ' €'
+        }
+    }
 
     if (!car.model.name) {
         dispatch(setCar({ car: myChoice }))
@@ -49,7 +69,7 @@ const Layout = () => {
                 </div>
                 <div className="product-price">
                     <p className="total-price">Prix : {price} €</p>
-                    <p></p>
+                    <p>{productChoice}</p>
                 </div>
                 <div className="navbar-configurator-close">
                     <ul>
