@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+#start {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    padding: 0 8px;
+}
+
+.navbar-configurator-start {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 10px;
+}
+
+.button-close {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    background: hsl(225, 0%, 100%);
+    padding: 12px 6px;
+}
+
+.button-close:hover {
+    color: white;
+    background: hsl(225, 100%, 0%);
+}
+
+.logo-content {
+    text-align: center;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cars-list {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .cars-list {
+        height: 70vh;
+        flex-flow: row wrap;
+    }
+}

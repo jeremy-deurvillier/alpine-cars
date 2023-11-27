@@ -1,28 +1,28 @@
-import { Link, useParams } from "react-router-dom"
-import Card from "../card/Card"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import Card from "../card/Card"
+import './Configure.css'
 
 export function Start() {
   const gammes = useSelector(state => state.cars.versions)
 
   return (
-    <div className="hero is-fullheight">
-      <div className="hero-head">
-        <nav className="navbar">
-          <div id="navbarConfigure" className="navbar-menu">
-            <div className="navbar-end">
-              <Link to="/" className="navbar-item">Fermer</Link>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <div className="hero-body">
-        <div className="container">
-          <div className="columns is-justify-content-space-evenly">
-            {gammes.map((model, index) => <Card key={index} model={model} />)}
-          </div>
+    <section id="start">
+      <nav className="navbar-configurator-start">
+        <ul>
+          <li>
+            <Link to="/" className="button-close">Fermer</Link>
+          </li>
+        </ul>
+      </nav>
+      <div className="configurator-start-content">
+        <div className="logo-content">
+          <img src="/assets/logo.png" alt="Alpine logo" />
+        </div>
+        <div className="cars-list">
+          {gammes.map((model, index) => <Card key={index} model={model} />)}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
